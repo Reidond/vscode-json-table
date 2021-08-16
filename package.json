@@ -3,6 +3,7 @@
     "displayName": "JSON Table",
     "description": "Edit your json files using table",
     "version": "0.0.1",
+    "license": "GPL-3.0-or-later",
     "engines": {
         "vscode": "^1.59.0"
     },
@@ -29,10 +30,9 @@
     },
     "main": "./dist/main.js",
     "scripts": {
-        "vscode:prepublish": "npm run esbuild -- --minify",
-        "esbuild": "esbuild ./src/extension.ts --bundle --outfile=dist/main.js --external:vscode --format=cjs --platform=node",
-        "build": "npm run esbuild -- --sourcemap",
-        "start": "npm run esbuild -- --sourcemap --watch",
+        "vscode:prepublish": "node scripts/prepublish.js",
+        "build": "node scripts/build.js",
+        "start": "node scripts/start.js",
         "test-build": "tsc -p ./",
         "pretest": "yarn run test-build && yarn run lint",
         "lint": "eslint src --ext ts,tsx,js,jsx --quiet --fix",
@@ -47,6 +47,7 @@
         "@types/vscode": "^1.59.0",
         "@typescript-eslint/eslint-plugin": "^4.29.1",
         "@typescript-eslint/parser": "^4.29.1",
+        "autoprefixer": "9",
         "esbuild": "^0.12.20",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
@@ -56,7 +57,11 @@
         "husky": "^7.0.1",
         "lint-staged": "^11.1.2",
         "mocha": "^8.4.0",
+        "postcss": "7",
         "prettier": "^2.3.2",
+        "stylelint": "13.13.0",
+        "stylelint-config-recommended": "^5.0.0",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat",
         "typescript": "^4.3.2",
         "vscode-test": "^1.5.2"
     },
@@ -71,6 +76,7 @@
         ]
     },
     "dependencies": {
+        "@deanc/esbuild-plugin-postcss": "^1.0.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     }

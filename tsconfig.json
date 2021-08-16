@@ -4,6 +4,7 @@
 		"target": "es6",
 		"outDir": "dist",
 		"jsx": "react",
+		"resolveJsonModule": true,
 		"lib": [
 			"es6"
 		],
