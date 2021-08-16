@@ -1,0 +1,18 @@
+[
+    {
+        "firstName": "myName",
+        "lastName": "myLastName"
+    },
+    {
+        "firstName": "",
+        "lastName": ""
+    },
+    {
+        "firstName": "",
+        "lastName": ""
+    },
+    {
+        "firstName": "",
+        "lastName": ""
+    }
+]
