@@ -1,13 +1,13 @@
-const base = require('./base')
+import { baseEsbuildConf } from './base.mjs'
 
-base({
+baseEsbuildConf({
     sourcemap: true,
     watch: {
         onRebuild(error, result) {
             if (error) {
                 console.error('watch build failed:', error)
             } else {
-                console.error('watch build succeeded:', result)
+                console.info('watch build succeeded:', result)
             }
         },
     },

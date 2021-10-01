@@ -1,9 +1,9 @@
-const esbuild = require('esbuild')
-const autoprefixer = require('autoprefixer')
-const tailwindcss = require('tailwindcss')
-const postCssPlugin = require('@deanc/esbuild-plugin-postcss')
+import esbuild from 'esbuild'
+import autoprefixer from 'autoprefixer'
+import tailwindcss from 'tailwindcss'
+import postCssPlugin from '@deanc/esbuild-plugin-postcss'
 
-module.exports = function (options) {
+function baseEsbuildConf(options) {
     return esbuild.build({
         entryPoints: ['./src/extension.ts'],
         bundle: true,
@@ -19,3 +19,5 @@ module.exports = function (options) {
         ...options,
     })
 }
+
+export { baseEsbuildConf }
