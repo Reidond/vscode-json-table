@@ -12,7 +12,7 @@
  */
 
 import * as vscode from 'vscode'
-import { renderAppHtml } from './ui-stuff-react/render'
+import { renderAppHtml } from './ui_react/render'
 
 export class JSONTableProvider implements vscode.CustomTextEditorProvider {
     public static register(context: vscode.ExtensionContext): vscode.Disposable {
