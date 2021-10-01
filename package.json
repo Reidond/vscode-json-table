@@ -30,9 +30,9 @@
     },
     "main": "./dist/main.js",
     "scripts": {
-        "vscode:prepublish": "node scripts/prepublish.mjs",
-        "build": "node scripts/build.mjs",
-        "start": "node scripts/start.mjs",
+        "vscode:prepublish": "node scripts-esbuild/prepublish.mjs",
+        "build": "node scripts-esbuild/build.mjs",
+        "start": "node scripts-esbuild/start.mjs",
         "test-build": "tsc -p ./",
         "pretest": "yarn run test-build && yarn run lint",
         "lint": "eslint src --ext ts,tsx,js,jsx --quiet --fix",
