@@ -12,25 +12,9 @@
  */
 
 import * as React from 'react'
-import * as Server from 'react-dom/server'
-import App from './app'
-import './tailwind.css'
 
-interface IResources {
-    rel: string
-    href: string
+function App() {
+    return <div />
 }
 
-export function renderAppHtml(resources?: IResources[] | null) {
-    return `<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Document</title>
-            ${resources?.map(({ rel, href }) => `<link rel=${rel} href=${href}>`)}
-        </head>
-        <body>${Server.renderToString(<App />)}</body>
-    </html>`
-}
+export { App }

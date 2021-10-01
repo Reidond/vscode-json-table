@@ -12,9 +12,25 @@
  */
 
 import * as React from 'react'
+import * as Server from 'react-dom/server'
+import { App } from './app'
+import './tailwind.css'
 
-function app() {
-    return <div />
+interface Links {
+    rel: string
+    href: string
 }
 
-export default app
+export function renderAppHtml(links?: Links[] | null) {
+    return `<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Document</title>
+            ${links?.map(({ rel, href }) => `<link rel=${rel} href=${href}>`)}
+        </head>
+        <body>${Server.renderToString(<App />)}</body>
+    </html>`
+}
